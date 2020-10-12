@@ -11,7 +11,7 @@ else
        else leap=1;
     else leap=0;
 if(leap==1)
-   printf("%d骞存槸闂板勾\n",year);
+   printf("%d年是闰年\n",year);
 else 
-   printf("%d骞翠笉鏄棸骞碶n",year);
+   printf("%d年不是闰年\n",year);
 }
