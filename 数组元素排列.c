@@ -9,7 +9,7 @@ int main(void)
    for(k=0; k<4; k++) {
    	index = k;
 		for(i=k+1; i<5; i++) {
-	    	if(a[i]<a[index]) {
+	    	if(a[i]>a[index]) {
 	       	index = i;
 			}
 		}
