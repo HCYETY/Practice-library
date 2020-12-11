@@ -10,4 +10,12 @@
 Êä³öÑùÀı:3333
 */
 
+#include<stdio.h>
+int main()
+  {long long a,b;
+   scanf ( "%lld %lld", &a, &b );
+   printf ( "%lld", (a % 10000 + b % 10000) % 10000 );
+   return 0;
+  }
+
 

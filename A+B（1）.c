@@ -11,6 +11,7 @@
 输出样例:16.17
 */
 
+/*解法一*/
 #include <stdio.h>
 int main()
   {double A, B, sum;
@@ -25,3 +26,18 @@ int main()
    }
    return 0;
   }
+  
+/*解法二*/
+#include<stdio.h>
+int main()
+  {double a,b;
+	scanf ( "%lf %lf", &a, &b );
+	long long c=a+b;
+	if ( c==a+b ) {
+		printf ( "%lld", c );
+	} else {
+		printf ( "%.2f", a+b );
+	}
+	return 0;
+  }
+
