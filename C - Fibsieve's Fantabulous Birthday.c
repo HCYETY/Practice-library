@@ -34,103 +34,36 @@ Case 3: 1 5
 
 
 #include <stdio.h>
-void position(int n);
+#define LL long long
 int main()
 {
-	int T, n, x, y;
-	int i, j, k;
-	scanf("%d", &T);
-	for(i=1; i<=T; i++) {
-		scanf("%d\n", &n);
-	}
-	for(i=1; i<=T; i++) {
-  		for(j=1; j<=5; j++) {
-  			for(k=1; j<=5; j++) {
-
-	  	   }
-		}
-		printf("Case %d:%d %d", i, x, y);
-	}
-}
-
-void position(int n) {
-	int x, y;
-	switch(n) {
-			case "1":
-				x=1, y=1;
-				break;
-			case "2":
-	 			x=1, y=2;
-				break;
-			case "3":
-	 			x=2, y=2;
-				break;
-			case "4":
-	 			x=2, y=1;
-				break;
-			case "5":
-	 			x=3, y=1;
-				break;
-			case "6":
-	 			x=3, y=2;
-				break;
-			case "7":
-	 			x=3, y=3;
-				break;
-			case "8":
-	 			x=2, y=3;
-				break;
-			case "9":
-	 			x=1, y=3;
-				break;
-			case "10":
-	 			x=1, y=4;
-				break;
-			case "11":
-	 			x=2, y=4;
-				break;
-			case "12":
-	 			x=3, y=4;
-				break;
-			case "13":
-	 			x=4, y=4;
-				break;
-			case "14":
-	 			x=4, y=3;
-				break;
-			case "15":
-	 			x=4, y=2;
-				break;
-			case "16":
-	 			x=4, y=1;
-				break;
-			case "17":
-	 			x=5, y=1;
-				break;
-			case "18":
-	 			x=5, y=2;
-				break;
-			case "19":
-	 			x=5, y=3;
-				break;
-			case "20":
-	 			x=5, y=4;
-				break;
-			case "21":
-	 			x=5, y=5;
-				break;
-			case "22":
-	 			x=4, y=5;
-				break;
-			case "23":
-	 			x=3, y=5;
-				break;
-			case "24":
-	 			x=2, y=5;
-				break;
-			case "25":
-	 			x=1, y=5;
-				break;
-		}
-		return x,y;
+	int t;
+   scanf("%d",&t);
+    int Case=1;
+   while(t--){
+      LL n;
+   	scanf("%lld",&n);
+      LL t=(LL)sqrt(n);//n的行/列数
+      printf("Case %d: ",Case++);
+      if(t*t==n) {//平方关系
+         if(t%2)//奇数时横坐标为1
+            printf ("1 %lld\n",t);
+         else//偶数时纵坐标为1
+         	printf ("%lld 1\n",t);
+      } else {//不为平方关系时
+         LL circle = t + 1;//圈数
+         LL minn = (circle-1) * (circle-1) + 1;//一圈中最小的数
+         if(circle%2) {//奇数圈
+            if(minn+circle-1>=n)
+               printf("%lld %lld\n",circle,n-minn+1);
+            else
+               printf("%lld %lld\n",circle*circle-n+1,circle);
+         } else {//偶数圈
+            if(minn+circle-1>=n)
+               printf("%lld %lld\n",n-minn+1,circle);
+            else
+               printf("%lld %lld\n",circle,circle*circle-n+1);
+         }
+      }
+   }
 }
