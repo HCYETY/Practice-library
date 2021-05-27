@@ -24,13 +24,13 @@ int main()
         cin>>x[i];
     }
     
-    int minT = 0, maxT = 0;
+    int minTime = 0, maxTime = 0;
     for(int i = 0; i < n; i++) {
-        minT = max(minT, min(x[i], l - x[i]));
+        minTime = max(minTime, min(x[i], l - x[i]));
     }
     for(int i = 0; i < n; i++) {
-        maxT = max(maxT, max(x[i], l - x[i]));
+        maxTime = max(maxTime, max(x[i], l - x[i]));
     }
 
-    cout<<minT<<maxT;
+    cout<<minTime<<maxTime;
 }
